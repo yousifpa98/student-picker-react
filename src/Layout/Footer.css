@@ -1,0 +1,26 @@
+footer {
+  height: 100px;
+  background-color: var(--surface-a10);
+  box-shadow: 4px 0 14px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer p {
+  color: white;
+}
+
+footer p span {
+  color: var(--primary-a0);
+}
+
+footer p a {
+  text-decoration: none;
+  color: var(--primary-a0);
+  cursor: pointer;
+}
+
+footer p a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,33 @@
+.nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  list-style-type: none;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--primary-a0);
+  padding: 0.45em;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-weight: normal; /* Maintain consistent font weight */
+}
+
+.nav-link.active {
+  background-color: var(--tonal-a30);
+  transform: scale(1.05); /* Visual highlight without resizing */
+}
+
+.nav-link:hover {
+  background-color: var(--tonal-a30);
+}
+
+html[data-theme="light"] header .nav-link {
+  color: var(--tonal-a0);
+}
+
+html[data-theme="light"] header .nav-link.active {
+  background-color: white;
+}

@@ -1,0 +1,97 @@
+.names {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+  gap: 2rem;
+  width: 50%;
+  height: 100%;
+  padding: 4rem;
+}
+
+.title h3 {
+  font-size: 2rem;
+}
+
+.enter-names {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  height: 20%;
+}
+
+.enter-names .title {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.hint {
+  color: var();
+}
+
+.name-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.name-icon {
+  fill: white;
+  height: 1rem;
+  width: auto;
+  cursor: pointer;
+}
+
+.names-list {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--tonal-a0);
+  height: 80%;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.names-list h3 {
+  width: 100%;
+  text-align: center;
+}
+
+.names-list ul {
+  width: 80%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  overflow-y: auto;
+  border: 1px solid var(--primary-a0);
+  padding: 1rem;
+}
+
+.names-list ul li {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  padding: 1rem;
+}
+
+.names ul li span {
+  font-weight: bold;
+}
+
+.names-list ul li:nth-child(odd) {
+  border-right: 2px solid var(--primary-a0);
+}
