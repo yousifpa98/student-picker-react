@@ -40,23 +40,23 @@ const Names = () => {
       <div className="names-list">
         <h3>Names List:</h3>
         <ul>
-          {names.map((name, index) => (
+          {names.map((obj, index) => (
             <li key={index}>
               <p>
-                {index + 1 + "."} <span>{name}</span>
+                {index + 1 + "."} <span>{obj.name}</span>
               </p>
               <div className="name-btns">
                 <Pen
                   onClick={() => {
-                    const newName = prompt("Edit name:", name);
+                    const newName = prompt("Edit name:", obj.name);
                     if (newName && newName.trim()) {
-                      updateName(name, newName);
+                      updateName(obj.name, newName);
                     }
                   }}
                   className="name-icon"
                 />
                 <Delete
-                  onClick={() => deleteName(name)}
+                  onClick={() => deleteName(obj.name)}
                   className="name-icon"
                 />
               </div>

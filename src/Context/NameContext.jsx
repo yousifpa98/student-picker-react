@@ -1,4 +1,3 @@
-// NameContext.jsx
 import React, { createContext, useContext, useEffect, useState } from "react";
 
 // Create the NameContext
@@ -29,22 +28,37 @@ export const NameProvider = ({ children }) => {
     const nameArray = newNames
       .split(",")
       .map((name) => name.trim())
-      .filter((name) => name);
+      .filter((name) => name)
+      .map((name) => ({ name, timesPicked: 0 })); // Store as objects
     setNames((prevNames) => [...prevNames, ...nameArray]);
   };
 
   const deleteName = (nameToDelete) => {
-    setNames((prevNames) => prevNames.filter((name) => name !== nameToDelete));
+    setNames((prevNames) => prevNames.filter((obj) => obj.name !== nameToDelete));
   };
 
   const updateName = (oldName, newName) => {
     setNames((prevNames) =>
-      prevNames.map((name) => (name === oldName ? newName.trim() : name))
+      prevNames.map((obj) =>
+        obj.name === oldName ? { ...obj, name: newName.trim() } : obj
+      )
+    );
+  };
+
+  const incrementTimesPicked = (nameToIncrement) => {
+    setNames((prevNames) =>
+      prevNames.map((obj) =>
+        obj.name === nameToIncrement
+          ? { ...obj, timesPicked: obj.timesPicked + 1 }
+          : obj
+      )
     );
   };
 
   return (
-    <NameContext.Provider value={{ names, addNames, deleteName, updateName }}>
+    <NameContext.Provider
+      value={{ names, addNames, deleteName, updateName, incrementTimesPicked }}
+    >
       {children}
     </NameContext.Provider>
   );
